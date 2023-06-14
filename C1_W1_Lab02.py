@@ -2,6 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('./deeplearning.mplstyle')
 
+m = 3
+sum = (0.5-1)**2 + (1-2)**2 + (1.5-3)**2
+avg = (1 / (2*m)) * sum
+print(avg)
+
 #x_train is the input variable (size in 1000 sqft)
 #y_train is the target (price in 1000s of dollars)
 x_train = np.array([1.0, 2.0])
@@ -35,7 +40,7 @@ plt.ylabel('Price (in 1000s of dollars)')
 plt.xlabel('Size (in 1000s of sqft)')
 plt.show()
 
-w = 100
+w = 200
 b = 100
 print(f'w: {w}')
 print(f'b: {b}')
