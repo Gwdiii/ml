@@ -24,11 +24,52 @@ print(f'(x^({i}), y^({i})) = ({x_i}, {y_i})')
 
 #plot the data points
 plt.scatter(x_train, y_train, marker='x', c='r')
+
 # set the title
 plt.title('Housing Prices')
+
 # set the y-axis label
 plt.ylabel('Price (in 1000s of dollars)')
+
 # set the x-axis label
 plt.xlabel('Size (in 1000s of sqft)')
 plt.show()
 
+w = 100
+b = 100
+print(f'w: {w}')
+print(f'b: {b}')
+
+# Computes the prediction of a linear model
+# Args:
+#     x (ndarray, (m,)): Data, m examples
+#     w, b (scalar)    : model parameters
+# Returns:
+#     y (ndarray, (m,)): target values
+def compute_model_output(x, w, b):
+    m = x.shape[0]
+    f_wb = np.zeros(m)
+
+    for i in range(m):
+        f_wb[i] = w * x[i] + b
+
+    return f_wb
+
+tmp_f_wb = compute_model_output(x_train, w, b,)
+
+#plot the model prediction
+plt.plot(x_train, tmp_f_wb, c='b', label='Actual Values')
+
+#plot the data points
+plt.scatter(x_train, y_train, marker='x', c='r', label='Actual Values')
+
+#set the title
+plt.title('Housing Prices')
+
+#set the y-axis label
+plt.ylabel('Price (in 1000s of dollars)')
+
+#set the y-axis label
+plt.xlabel('Size (in 1000s of sqft)')
+plt.legend()
+plt.show()
