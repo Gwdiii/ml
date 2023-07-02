@@ -44,7 +44,8 @@ print(np.c_[z_tmp, y])
 
 # Plot z vs sigmoid(z)
 fig, ax = plt.subplots(1, 1, figsize=(5,3))
-ax.plot(z_tmp, y, c="b")
+print(f"type ax: {type(ax)}")
+ax.plot(z_tmp, y, c="b") # Not sure why this doesn't work
 
 ax.set_title("Sigmoid function")
 ax.set_ylabel("sigmoid(z)")
