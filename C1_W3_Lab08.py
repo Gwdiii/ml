@@ -6,5 +6,5 @@ from plt_overfit import overfit_example, output
 plt.style.use("./deeplearning.mplstyle")
 
 plt.close("all")
-plt.display(output) # no idea how this is supposed to work
+display(output) # no idea how this is supposed to work
 ofit = overfit_example(False)
